@@ -1,0 +1,677 @@
+$type: card
+rules: []
+properties:
+  title:
+    type: element
+    xtype: at-carbon-card-title
+    title: Basic Card Sample
+    xgridcols: 12
+    xstyle: 
+    xclass: 
+    actionListeners:
+      - _start
+  content:
+    type: element
+    xtype: at-core-view
+    model: 
+    view: |-
+      <div class="layout-vertical">
+      	{% for item in items | limit: 6 %}
+      		<div class="layout-horizontal  {% if forloop.index > 3 %}expanded-only{%endif%}">
+        		<at-link class="layout-flex" href="{{item.link}}" label="{{item.title | escape }}">
+          		<div class="layout-horizontal mx mbsm mtsm">     
+             		<div class="layout-flex text-primary">
+                	<at-carbon-clamp lines="2" class="font-subhead primary">{{item.title | truncate: 70, ""}}</at-carbon-clamp>
+                	<at-carbon-clamp lines="2">{{item.description | truncate: 160, ""}}</at-carbon-clamp>  
+            		</div>
+          			{% if item.thumbnail %}
+            			<div class="ml mtsm">
+              			<iron-image sizing="cover" preload class="news-list-image" src="{{item.thumbnail}}"></iron-image>    
+            			</div>  
+          			{% endif %}
+          		</div>
+        		</at-link>
+       		</div>
+      	{% endfor %}
+      </div>
+        
+      <style>
+        .news-list-image {
+          height: 80px;
+          width: 105px;
+          background-color: lightgray;
+        }
+      </style>
+    xgridcols: 12
+    xstyle: 
+    xclass: 
+    actionListeners:
+      - _all
+    default: 
+    modelRoot: state.model
+  footer3:
+    type: element
+    title: View in bbc.co.uk
+    xtype: at-carbon-card-footer
+    xgridcols: 12
+    expandable: !!bool true
+    href: https://bbc.co.uk/news
+$meta:
+  cardId: !!int 6
+  preview-data: |-
+    {
+      "items": [
+        {
+          "title": "Local elections: Main parties hit by Brexit backlash in polls",
+          "description": "The Lib Dems, Greens and independents make gains in the local elections as Labour and the Tories suffer losses.",
+          "link": "https://www.bbc.co.uk/news/uk-politics-48142181",
+          "guid": "https://www.bbc.co.uk/news/uk-politics-48142181",
+          "pubDate": "2019-05-03T07:37:48Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/C843/production/_106776215_mediaitem106776214.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/C843/production/_106776215_mediaitem106776214.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-05-03T07:37:48Z",
+          "id": "https://www.bbc.co.uk/news/uk-politics-48142181"
+        },
+        {
+          "title": "Cyclone Fani: Powerful storm slams into eastern Indian coast",
+          "description": "The country's eastern coastline is now experiencing the full impact of the powerful Cyclone Fani.",
+          "link": "https://www.bbc.co.uk/news/world-asia-india-48121606",
+          "guid": "https://www.bbc.co.uk/news/world-asia-india-48121606",
+          "pubDate": "2019-05-03T05:40:07Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/F287/production/_106778026_hi053712479.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/F287/production/_106778026_hi053712479.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-05-03T05:40:07Z",
+          "id": "https://www.bbc.co.uk/news/world-asia-india-48121606"
+        },
+        {
+          "title": "Peter Mayhew: Harrison Ford leads tributes to Star Wars' Chewbacca star",
+          "description": "Peter Mayhew, who has died aged 74, was a \"kind and gentle man\", says Han Solo actor Harrison Ford.",
+          "link": "https://www.bbc.co.uk/news/entertainment-arts-48142765",
+          "guid": "https://www.bbc.co.uk/news/entertainment-arts-48142765",
+          "pubDate": "2019-05-03T07:40:14Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/BFA1/production/_106775094_5a92457a-cdbb-4ef6-a76e-e0db1fab4386.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/BFA1/production/_106775094_5a92457a-cdbb-4ef6-a76e-e0db1fab4386.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-05-03T07:40:14Z",
+          "id": "https://www.bbc.co.uk/news/entertainment-arts-48142765"
+        },
+        {
+          "title": "Gay HIV transmission with treatment is 'zero risk', study confirms",
+          "description": "A European study followed 972 male couples, where one was living with HIV, over an eight-year period.",
+          "link": "https://www.bbc.co.uk/news/health-48124007",
+          "guid": "https://www.bbc.co.uk/news/health-48124007",
+          "pubDate": "2019-05-02T23:43:53Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/18105/production/_106756589_gettyimages-471896562.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/18105/production/_106756589_gettyimages-471896562.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-05-02T23:43:53Z",
+          "id": "https://www.bbc.co.uk/news/health-48124007"
+        },
+        {
+          "title": "Future of 1p and 2p coins secured 'for years to come'",
+          "description": "The Treasury decides to continue with copper coins and sets a plan to ensure people have access to cash.",
+          "link": "https://www.bbc.co.uk/news/business-48133093",
+          "guid": "https://www.bbc.co.uk/news/business-48133093",
+          "pubDate": "2019-05-02T23:04:41Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/4183/production/_100417761_coinschild_getty.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/4183/production/_100417761_coinschild_getty.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-05-02T23:04:41Z",
+          "id": "https://www.bbc.co.uk/news/business-48133093"
+        },
+        {
+          "title": "Kim Jong-nam: Vietnamese woman freed in murder case",
+          "description": "Doan Thi Huong from Vietnam had been accused of killing the half-brother of North Korea's leader.",
+          "link": "https://www.bbc.co.uk/news/world-asia-48142871",
+          "guid": "https://www.bbc.co.uk/news/world-asia-48142871",
+          "pubDate": "2019-05-03T05:02:09Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/11983/production/_106776027_gettyimages-1134176509.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/11983/production/_106776027_gettyimages-1134176509.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-05-03T05:02:09Z",
+          "id": "https://www.bbc.co.uk/news/world-asia-48142871"
+        },
+        {
+          "title": "New Zealand PM Jacinda Ardern engaged to Clarke Gayford",
+          "description": "News of the engagement emerged after she was seen attending a ceremony with a ring on her left hand.",
+          "link": "https://www.bbc.co.uk/news/world-asia-48143395",
+          "guid": "https://www.bbc.co.uk/news/world-asia-48143395",
+          "pubDate": "2019-05-03T06:15:21Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/E1B1/production/_106777775_hi051682859.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/E1B1/production/_106777775_hi051682859.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-05-03T06:15:21Z",
+          "id": "https://www.bbc.co.uk/news/world-asia-48143395"
+        },
+        {
+          "title": "HSBC first quarter profit jumps as costs drop",
+          "description": "The bank's boss, John Flint, says the result is \"encouraging\" in a climate of global economic uncertainty.",
+          "link": "https://www.bbc.co.uk/news/business-48143101",
+          "guid": "https://www.bbc.co.uk/news/business-48143101",
+          "pubDate": "2019-05-03T05:55:54Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/13F5D/production/_106775718_hsbc.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/13F5D/production/_106775718_hsbc.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-05-03T05:55:54Z",
+          "id": "https://www.bbc.co.uk/news/business-48143101"
+        },
+        {
+          "title": "Turner Prize drops drops Stagecoach sponsorship",
+          "description": "The arts prize faced criticism for the deal with a company linked to an anti-gay rights campaigner.",
+          "link": "https://www.bbc.co.uk/news/entertainment-arts-48142314",
+          "guid": "https://www.bbc.co.uk/news/entertainment-arts-48142314",
+          "pubDate": "2019-05-03T07:42:28Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/1AAA/production/_106762860_cb5893ef-5453-42ef-8773-31c5252a935c.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/1AAA/production/_106762860_cb5893ef-5453-42ef-8773-31c5252a935c.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-05-03T07:42:28Z",
+          "id": "https://www.bbc.co.uk/news/entertainment-arts-48142314"
+        },
+        {
+          "title": "Peer-to-peer rewards: ‘Why I tip my colleagues at work’",
+          "description": "Peer-to-peer micro-bonuses could soon change the dynamic in the UK’s workplaces.",
+          "link": "https://www.bbc.co.uk/news/business-48139518",
+          "guid": "https://www.bbc.co.uk/news/business-48139518",
+          "pubDate": "2019-05-02T23:04:54Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/2721/production/_106771001_beckythorntonpicfliss.jpg_large.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/2721/production/_106771001_beckythorntonpicfliss.jpg_large.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-05-02T23:04:54Z",
+          "id": "https://www.bbc.co.uk/news/business-48139518"
+        },
+        {
+          "title": "BBC reporter confronts ‘Saoradh’ members over Lyra McKee death",
+          "description": "Police say the group known as ‘Saoradh’ are the political voice of the New IRA.",
+          "link": "https://www.bbc.co.uk/news/uk-northern-ireland-48145712",
+          "guid": "https://www.bbc.co.uk/news/uk-northern-ireland-48145712",
+          "pubDate": "2019-05-03T07:41:11Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/1661D/production/_106777619_p0785xm5.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/1661D/production/_106777619_p0785xm5.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-05-03T07:41:11Z",
+          "id": "https://www.bbc.co.uk/news/uk-northern-ireland-48145712"
+        },
+        {
+          "title": "WW2 footage shows Sussex soldiers sending messages home",
+          "description": "Attempts are made to trace families of Sussex veterans who filmed messages in Asia.",
+          "link": "https://www.bbc.co.uk/news/uk-england-sussex-48140220",
+          "guid": "https://www.bbc.co.uk/news/uk-england-sussex-48140220",
+          "pubDate": "2019-05-02T16:12:50Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/7C49/production/_106771813_p07847xz.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/7C49/production/_106771813_p07847xz.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-05-02T16:12:50Z",
+          "id": "https://www.bbc.co.uk/news/uk-england-sussex-48140220"
+        },
+        {
+          "title": "Thai king coronation: Sacred water, royal regalia and a housewarming party",
+          "description": "The coronation of Thailand's Vajiralongkorn is an elaborate mix of Buddhist and Brahmin rituals.",
+          "link": "https://www.bbc.co.uk/news/world-asia-47931922",
+          "guid": "https://www.bbc.co.uk/news/world-asia-47931922",
+          "pubDate": "2019-05-03T04:54:17Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/12493/production/_106599847_mediaitem106599846.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/12493/production/_106599847_mediaitem106599846.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-05-03T04:54:17Z",
+          "id": "https://www.bbc.co.uk/news/world-asia-47931922"
+        },
+        {
+          "title": "Local elections: Results in maps and charts",
+          "description": "Find your result and follow the others as they come in using our interactive map.",
+          "link": "https://www.bbc.co.uk/news/uk-politics-48091592",
+          "guid": "https://www.bbc.co.uk/news/uk-politics-48091592",
+          "pubDate": "2019-05-03T06:02:06Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/28CF/production/_106774401_index_local_elections_2019_976-nc.png",
+          "thumbnail": "http://c.files.bbci.co.uk/28CF/production/_106774401_index_local_elections_2019_976-nc.png",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-05-03T06:02:06Z",
+          "id": "https://www.bbc.co.uk/news/uk-politics-48091592"
+        },
+        {
+          "title": "Local elections: The main parties punished",
+          "description": "It was a bad night for the Conservatives and for Labour, while the Lib Dems, Greens and independents prospered.",
+          "link": "https://www.bbc.co.uk/news/uk-politics-48132541",
+          "guid": "https://www.bbc.co.uk/news/uk-politics-48132541",
+          "pubDate": "2019-05-03T07:16:33Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/F6C8/production/_106767136_pollingmotherandchild.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/F6C8/production/_106767136_pollingmotherandchild.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-05-03T07:16:33Z",
+          "id": "https://www.bbc.co.uk/news/uk-politics-48132541"
+        },
+        {
+          "title": "Local elections: Brexit 'dissatisfaction hitting Conservative vote'",
+          "description": "Graham Brady says \"dissatisfaction\" over Brexit is hitting the Conservative vote.",
+          "link": "https://www.bbc.co.uk/news/uk-politics-48143439",
+          "guid": "https://www.bbc.co.uk/news/uk-politics-48143439",
+          "pubDate": "2019-05-03T02:30:14Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/14683/production/_106778538_p0785gtx_e.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/14683/production/_106778538_p0785gtx_e.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-05-03T02:30:14Z",
+          "id": "https://www.bbc.co.uk/news/uk-politics-48143439"
+        },
+        {
+          "title": "Labour 'trying to bail out' Tories on Brexit",
+          "description": "Labour's Barry Gardiner clashes with Conservative minister James Cleverly on local election night - over Brexit.",
+          "link": "https://www.bbc.co.uk/news/uk-politics-48143435",
+          "guid": "https://www.bbc.co.uk/news/uk-politics-48143435",
+          "pubDate": "2019-05-03T01:42:23Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/63D5/production/_106775552_p0785ftl.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/63D5/production/_106775552_p0785ftl.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-05-03T01:42:23Z",
+          "id": "https://www.bbc.co.uk/news/uk-politics-48143435"
+        },
+        {
+          "title": "Local elections: Analysis in 60 seconds",
+          "description": "Professor John Curtice explains how the \"dominance\" of the Conservative and Labour parties has come under pressure.",
+          "link": "https://www.bbc.co.uk/news/uk-politics-48145685",
+          "guid": "https://www.bbc.co.uk/news/uk-politics-48145685",
+          "pubDate": "2019-05-03T06:20:34Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/F0ED/production/_106777616_p0785qyg.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/F0ED/production/_106777616_p0785qyg.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-05-03T06:20:34Z",
+          "id": "https://www.bbc.co.uk/news/uk-politics-48145685"
+        },
+        {
+          "title": "Local elections: Lib Dems 'fighting back', says deputy leader",
+          "description": "Liberal Democrat deputy leader Jo Swinson says her party is showing signs of a \"fightback\".",
+          "link": "https://www.bbc.co.uk/news/uk-politics-48143437",
+          "guid": "https://www.bbc.co.uk/news/uk-politics-48143437",
+          "pubDate": "2019-05-03T01:58:09Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/B1F5/production/_106775554_p0785g6f.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/B1F5/production/_106775554_p0785g6f.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-05-03T01:58:09Z",
+          "id": "https://www.bbc.co.uk/news/uk-politics-48143437"
+        },
+        {
+          "title": "NI council elections: Polls close after 'steady' turnout",
+          "description": "Voters have been deciding who should represent them on 11 councils across Northern Ireland.",
+          "link": "https://www.bbc.co.uk/news/uk-northern-ireland-politics-47969819",
+          "guid": "https://www.bbc.co.uk/news/uk-northern-ireland-politics-47969819",
+          "pubDate": "2019-05-02T21:00:10Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/3AD9/production/_106756051_election_2017_voting_at_polling_stations049.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/3AD9/production/_106756051_election_2017_voting_at_polling_stations049.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-05-02T21:00:10Z",
+          "id": "https://www.bbc.co.uk/news/uk-northern-ireland-politics-47969819"
+        },
+        {
+          "title": "Local elections: What are they all about?",
+          "description": "Last year only one in three people used their vote. So what are the local elections all about?",
+          "link": "https://www.bbc.co.uk/news/uk-england-47980754",
+          "guid": "https://www.bbc.co.uk/news/uk-england-47980754",
+          "pubDate": "2019-05-02T08:50:59Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/5795/production/_106512422_p076wq9b.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/5795/production/_106512422_p076wq9b.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-05-02T08:50:59Z",
+          "id": "https://www.bbc.co.uk/news/uk-england-47980754"
+        },
+        {
+          "title": "Local elections 2019: Dogs at the polls",
+          "description": "Pooches and hounds are at polling stations as people vote in local elections in England and Northern Ireland.",
+          "link": "https://www.bbc.co.uk/news/uk-politics-48132912",
+          "guid": "https://www.bbc.co.uk/news/uk-politics-48132912",
+          "pubDate": "2019-05-02T12:02:30Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/6686/production/_106764262_sineadhensey.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/6686/production/_106764262_sineadhensey.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-05-02T12:02:30Z",
+          "id": "https://www.bbc.co.uk/news/uk-politics-48132912"
+        },
+        {
+          "title": "The Papers: Burglar inquest and Williamson sacking fallout",
+          "description": "Several front pages focus on the lawful killing verdict following the death of a burglar in south-east London.",
+          "link": "https://www.bbc.co.uk/news/blogs-the-papers-48142300",
+          "guid": "https://www.bbc.co.uk/news/blogs-the-papers-48142300",
+          "pubDate": "2019-05-03T04:28:31Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/9373/production/_106774773_untitled-2.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/9373/production/_106774773_untitled-2.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-05-03T04:28:31Z",
+          "id": "https://www.bbc.co.uk/news/blogs-the-papers-48142300"
+        },
+        {
+          "title": "'I accidentally shot dead my little sister'",
+          "description": "Sean was 10 when he found a gun at home and it went off, killing his younger sister and changing his life forever.",
+          "link": "https://www.bbc.co.uk/news/world-us-canada-48139558",
+          "guid": "https://www.bbc.co.uk/news/world-us-canada-48139558",
+          "pubDate": "2019-05-02T21:45:45Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/16F4B/production/_106772049_63d29925-17a1-449e-8ed0-ada0154e0b17.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/16F4B/production/_106772049_63d29925-17a1-449e-8ed0-ada0154e0b17.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-05-02T21:45:45Z",
+          "id": "https://www.bbc.co.uk/news/world-us-canada-48139558"
+        },
+        {
+          "title": "Quiz of the Week: What kind of animal put Pete Doherty in hospital?",
+          "description": "Have you been paying attention to what's been going on over the past seven days?",
+          "link": "https://www.bbc.co.uk/news/stories-48134171",
+          "guid": "https://www.bbc.co.uk/news/stories-48134171",
+          "pubDate": "2019-05-02T23:49:55Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/1F78/production/_106765080_pete-doherty.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/1F78/production/_106765080_pete-doherty.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-05-02T23:49:55Z",
+          "id": "https://www.bbc.co.uk/news/stories-48134171"
+        },
+        {
+          "title": "Thai king: Rare footage of 1926 coronation",
+          "description": "Thai film archivists have restored and released footage of King Prajadhipok's coronation in 1926.",
+          "link": "https://www.bbc.co.uk/news/world-asia-48130188",
+          "guid": "https://www.bbc.co.uk/news/world-asia-48130188",
+          "pubDate": "2019-05-03T07:12:41Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/308A/production/_106762421_p0782cx9.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/308A/production/_106762421_p0782cx9.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-05-03T07:12:41Z",
+          "id": "https://www.bbc.co.uk/news/world-asia-48130188"
+        },
+        {
+          "title": "The Greta effect? Meet the schoolgirl climate warriors",
+          "description": "Young girls inspired by Greta Thunberg tell the BBC why they're striking for climate action.",
+          "link": "https://www.bbc.co.uk/news/world-48114220",
+          "guid": "https://www.bbc.co.uk/news/world-48114220",
+          "pubDate": "2019-05-03T00:42:13Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/17BD3/production/_106753279_5f8859fd-7cf4-46ca-b57d-c80fd177fbbc.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/17BD3/production/_106753279_5f8859fd-7cf4-46ca-b57d-c80fd177fbbc.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-05-03T00:42:13Z",
+          "id": "https://www.bbc.co.uk/news/world-48114220"
+        },
+        {
+          "title": "Homeless World Cup: 'Scoring that goal changed my life'",
+          "description": "Former heroin addict Dee Sansome turned her life around after being picked to play for Wales.",
+          "link": "https://www.bbc.co.uk/news/uk-wales-48136530",
+          "guid": "https://www.bbc.co.uk/news/uk-wales-48136530",
+          "pubDate": "2019-05-02T23:11:40Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/151EB/production/_106770568_p0784k22.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/151EB/production/_106770568_p0784k22.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-05-02T23:11:40Z",
+          "id": "https://www.bbc.co.uk/news/uk-wales-48136530"
+        },
+        {
+          "title": "Life-saving kidney delivered by drone",
+          "description": "The US flight required a specially-designed drone which was able to maintain and monitor the organ.",
+          "link": "https://www.bbc.co.uk/news/technology-48132595",
+          "guid": "https://www.bbc.co.uk/news/technology-48132595",
+          "pubDate": "2019-05-02T15:06:58Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/B867/production/_106770274_kidneydrone2.gif",
+          "thumbnail": "http://c.files.bbci.co.uk/B867/production/_106770274_kidneydrone2.gif",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-05-02T15:06:58Z",
+          "id": "https://www.bbc.co.uk/news/technology-48132595"
+        },
+        {
+          "title": "BBC Breakfast",
+          "description": "Britain's most-watched news channel, delivering breaking news and analysis all day, every day.",
+          "link": "https://www.bbc.co.uk/news/10318089",
+          "guid": "https://www.bbc.co.uk/news/10318089",
+          "pubDate": "2019-05-01T18:23:45Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/059C/production/_106463410_ecb0b10f-d372-402e-aced-e7b92ab4ebd1.png",
+          "thumbnail": "http://c.files.bbci.co.uk/059C/production/_106463410_ecb0b10f-d372-402e-aced-e7b92ab4ebd1.png",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-05-01T18:23:45Z",
+          "id": "https://www.bbc.co.uk/news/10318089"
+        },
+        {
+          "title": "Biodiversity heroes: The teenagers saving Madagascar's wildlife",
+          "description": "This quiet, teen revolution could pave the way to Madagascar's sustainable future.",
+          "link": "https://www.bbc.co.uk/news/science-environment-48113501",
+          "guid": "https://www.bbc.co.uk/news/science-environment-48113501",
+          "pubDate": "2019-05-03T04:08:13Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/4B18/production/_106742291_mediaitem106742290.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/4B18/production/_106742291_mediaitem106742290.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-05-03T04:08:13Z",
+          "id": "https://www.bbc.co.uk/news/science-environment-48113501"
+        },
+        {
+          "title": "Should schools impose a dress code on parents?",
+          "description": "Some argue the rules send a bad message to parents while others say it is necessary to set standards.",
+          "link": "https://www.bbc.co.uk/news/world-us-canada-48127788",
+          "guid": "https://www.bbc.co.uk/news/world-us-canada-48127788",
+          "pubDate": "2019-05-02T18:57:54Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/493B/production/_106774781_schoolparents2_976alamy.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/493B/production/_106774781_schoolparents2_976alamy.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-05-02T18:57:54Z",
+          "id": "https://www.bbc.co.uk/news/world-us-canada-48127788"
+        },
+        {
+          "title": "Russia's anti-Kremlin troll StalinGulag finally breaks cover",
+          "description": "Hugely popular on social media, this secretive man known as StalinGulag has revealed his identity.",
+          "link": "https://www.bbc.co.uk/news/world-europe-48132193",
+          "guid": "https://www.bbc.co.uk/news/world-europe-48132193",
+          "pubDate": "2019-05-03T00:20:49Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/17800/production/_106765269_screenshot2019-05-01at23.22.07.png",
+          "thumbnail": "http://c.files.bbci.co.uk/17800/production/_106765269_screenshot2019-05-01at23.22.07.png",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-05-03T00:20:49Z",
+          "id": "https://www.bbc.co.uk/news/world-europe-48132193"
+        },
+        {
+          "title": "Ted Bundy: Who was the serial killer Zac Efron plays in new film?",
+          "description": "A new movie about America's most infamous serial killer starring Zac Efron has just been released.",
+          "link": "https://www.bbc.co.uk/news/newsbeat-48094459",
+          "guid": "https://www.bbc.co.uk/news/newsbeat-48094459",
+          "pubDate": "2019-05-03T00:20:16Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/05E3/production/_106770510_wicked3.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/05E3/production/_106770510_wicked3.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-05-03T00:20:16Z",
+          "id": "https://www.bbc.co.uk/news/newsbeat-48094459"
+        },
+        {
+          "title": "Could high-flying drones power your home one day?",
+          "description": "How kites and drones could generate electricity to supplement conventional wind turbines.",
+          "link": "https://www.bbc.co.uk/news/business-48132021",
+          "guid": "https://www.bbc.co.uk/news/business-48132021",
+          "pubDate": "2019-05-02T23:29:40Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/95A3/production/_106770383_0b590cbd-4782-4ace-a2df-6970fb14bec3.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/95A3/production/_106770383_0b590cbd-4782-4ace-a2df-6970fb14bec3.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-05-02T23:29:40Z",
+          "id": "https://www.bbc.co.uk/news/business-48132021"
+        },
+        {
+          "title": "Gavin Williamson sacking: What is the Official Secrets Act?",
+          "description": "Gavin Williamson has been sacked for allegedly disclosing information.",
+          "link": "https://www.bbc.co.uk/news/uk-politics-48132421",
+          "guid": "https://www.bbc.co.uk/news/uk-politics-48132421",
+          "pubDate": "2019-05-02T11:26:08Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/4034/production/_106763461_gettyimages-172345072.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/4034/production/_106763461_gettyimages-172345072.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-05-02T11:26:08Z",
+          "id": "https://www.bbc.co.uk/news/uk-politics-48132421"
+        },
+        {
+          "title": "Favourite Trump & Wilson tied after semi-final first session",
+          "description": "Judd Trump is tied at 4-4 with qualifier Gary Wilson after the first session of their World Championship semi-final in Sheffield, while four-time champion John Higgins trails David Gilbert 5-3.",
+          "link": "https://www.bbc.co.uk/sport/snooker/48139928",
+          "guid": "https://www.bbc.co.uk/sport/snooker/48139928",
+          "pubDate": "2019-05-02T21:06:45Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/736B/production/_106774592_trump_wilson_getty_01.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/736B/production/_106774592_trump_wilson_getty_01.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-05-02T21:06:45Z",
+          "id": "https://www.bbc.co.uk/sport/snooker/48139928"
+        },
+        {
+          "title": "Arsenal's European hopes 50-50, says Emery after 3-1 first-leg win",
+          "description": "Arsenal's chances of reaching the final of the Europa League remain \"50-50,\" says manager Unai Emery despite a first-leg victory.",
+          "link": "https://www.bbc.co.uk/sport/football/48142519",
+          "guid": "https://www.bbc.co.uk/sport/football/48142519",
+          "pubDate": "2019-05-02T22:30:49Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/15BF5/production/_106777098_unai_emery_getty.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/15BF5/production/_106777098_unai_emery_getty.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-05-02T22:30:49Z",
+          "id": "https://www.bbc.co.uk/sport/football/48142519"
+        },
+        {
+          "title": "Trophies, signings & a late-night visit from Bielsa - Pochettino meets Lineker",
+          "description": "Spurs boss Mauricio Pochettino on how he turned Spurs into Champions League contenders and their aims now they have moved into their £1bn stadium.",
+          "link": "https://www.bbc.co.uk/sport/football/48125818",
+          "guid": "https://www.bbc.co.uk/sport/football/48125818",
+          "pubDate": "2019-05-02T19:41:29Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/173BD/production/_106756159_hi053473937.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/173BD/production/_106756159_hi053473937.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-05-02T19:41:29Z",
+          "id": "https://www.bbc.co.uk/sport/football/48125818"
+        },
+        {
+          "title": "Eden Hazard: Maurizio Sarri says Belgian forward needed to rest against Eintracht Frankfurt",
+          "description": "Maurizio Sarri says he left Eden Hazard out of the Chelsea starting line-up against Eintracht Frankfurt to keep the forward fresh.",
+          "link": "https://www.bbc.co.uk/sport/football/48142475",
+          "guid": "https://www.bbc.co.uk/sport/football/48142475",
+          "pubDate": "2019-05-02T22:31:53Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/2EAB/production/_106774911_hazard_reuters2.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/2EAB/production/_106774911_hazard_reuters2.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-05-02T22:31:53Z",
+          "id": "https://www.bbc.co.uk/sport/football/48142475"
+        },
+        {
+          "title": "World Snooker: Social media thought John Higgins had died mid-match at the Crucible",
+          "description": "Watch the bizarre moment when John Higgins appeared to be either dead or in a very deep sleep during his World Snooker Championship quarter-final with Neil Robertson.",
+          "link": "https://www.bbc.co.uk/sport/av/snooker/48137771",
+          "guid": "https://www.bbc.co.uk/sport/av/snooker/48137771",
+          "pubDate": "2019-05-02T13:33:45Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/03DA/production/_106768900_p0783l33.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/03DA/production/_106768900_p0783l33.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-05-02T13:33:45Z",
+          "id": "https://www.bbc.co.uk/sport/av/snooker/48137771"
+        },
+        {
+          "title": "Hales would still be in World Cup squad if ban details had not been made public  - Giles",
+          "description": "Alex Hales would still be part of the England squad had details of his suspension not become public, director of cricket Ashley Giles says.",
+          "link": "https://www.bbc.co.uk/sport/cricket/48136883",
+          "guid": "https://www.bbc.co.uk/sport/cricket/48136883",
+          "pubDate": "2019-05-02T17:00:44Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/125B2/production/_106768157_alexhales.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/125B2/production/_106768157_alexhales.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-05-02T17:00:44Z",
+          "id": "https://www.bbc.co.uk/sport/cricket/48136883"
+        },
+        {
+          "title": "Caruana Galizia murder: Fighting for justice for my murdered mother",
+          "description": "The son of murdered journalist Daphne Caruana Galizia on why press freedom is more important than ever.",
+          "link": "https://www.bbc.co.uk/news/world-48093331",
+          "guid": "https://www.bbc.co.uk/news/world-48093331",
+          "pubDate": "2019-05-02T15:36:38Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/4244/production/_98346961_maltacindexreut2011.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/4244/production/_98346961_maltacindexreut2011.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-05-02T15:36:38Z",
+          "id": "https://www.bbc.co.uk/news/world-48093331"
+        },
+        {
+          "title": "World Press Freedom Day: Jailed for a painting",
+          "description": "Zehra Doğan, a Kurdish journalist and artist, was sentenced to nearly three years in jail for a painting but was determined to continue sharing stories.",
+          "link": "https://www.bbc.co.uk/news/world-48134081",
+          "guid": "https://www.bbc.co.uk/news/world-48134081",
+          "pubDate": "2019-05-03T00:52:14Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/1795/production/_106773060_p0784h3w.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/1795/production/_106773060_p0784h3w.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-05-03T00:52:14Z",
+          "id": "https://www.bbc.co.uk/news/world-48134081"
+        },
+        {
+          "title": "El Bus TV: News bulletins on the bus in Venezuela",
+          "description": "A group of local journalists in Venezuela offers independent news to the public, by getting on buses and staging TV news bulletins.",
+          "link": "https://www.bbc.co.uk/news/world-latin-america-48142420",
+          "guid": "https://www.bbc.co.uk/news/world-latin-america-48142420",
+          "pubDate": "2019-05-02T23:00:53Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/9E63/production/_106774504_p07851bn.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/9E63/production/_106774504_p07851bn.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-05-02T23:00:53Z",
+          "id": "https://www.bbc.co.uk/news/world-latin-america-48142420"
+        },
+        {
+          "title": "World Press Freedom Day: How many journalists died last year?",
+          "description": "Journalists are dying or being imprisoned for carrying out their work across the globe.",
+          "link": "https://www.bbc.co.uk/news/world-48098710",
+          "guid": "https://www.bbc.co.uk/news/world-48098710",
+          "pubDate": "2019-05-03T01:01:15Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/30D0/production/_106769421_gettyimages-888787578.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/30D0/production/_106769421_gettyimages-888787578.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-05-03T01:01:15Z",
+          "id": "https://www.bbc.co.uk/news/world-48098710"
+        },
+        {
+          "title": "Akihito: The Japanese emperor with the human touch",
+          "description": "Emperor Akihito will be remembered as the man who began the modernisation of Japan's Chrysanthemum Throne.",
+          "link": "https://www.bbc.co.uk/news/world-asia-48093668",
+          "guid": "https://www.bbc.co.uk/news/world-asia-48093668",
+          "pubDate": "2019-04-29T23:08:55Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/7D9A/production/_106645123_hi053575864.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/7D9A/production/_106645123_hi053575864.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-04-29T23:08:55Z",
+          "id": "https://www.bbc.co.uk/news/world-asia-48093668"
+        },
+        {
+          "title": "Anna Sorokin: The trial of New York's fake heiress",
+          "description": "A woman who pretended to be a wealthy heiress to swindle high society New York is convicted of multiple charges.",
+          "link": "https://www.bbc.co.uk/news/world-us-canada-47741923",
+          "guid": "https://www.bbc.co.uk/news/world-us-canada-47741923",
+          "pubDate": "2019-04-26T08:42:55Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/14143/production/_106234228_anna2.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/14143/production/_106234228_anna2.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-04-26T08:42:55Z",
+          "id": "https://www.bbc.co.uk/news/world-us-canada-47741923"
+        },
+        {
+          "title": "Sri Lanka attacks: Children of the Easter Sunday carnage",
+          "description": "Scores of children were killed last Sunday in Sri Lanka, taking many down a devastatingly familiar path.",
+          "link": "https://www.bbc.co.uk/news/world-asia-48048856",
+          "guid": "https://www.bbc.co.uk/news/world-asia-48048856",
+          "pubDate": "2019-04-27T23:19:16Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/2526/production/_106601590_sneha.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/2526/production/_106601590_sneha.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2019-04-27T23:19:16Z",
+          "id": "https://www.bbc.co.uk/news/world-asia-48048856"
+        }
+      ],
+      "title": "BBC News - Home",
+      "description": "BBC News - Home",
+      "link": "https://www.bbc.co.uk/news/",
+      "generator": "RSS for Node",
+      "lastBuildDate": "2019-05-03T08:05:30Z",
+      "copyright": "Copyright: (C) British Broadcasting Corporation, see http://news.bbc.co.uk/2/hi/help/rss/4498287.stm for terms and conditions of reuse.",
+      "language": "en-gb",
+      "ttl": "15",
+      "image": {
+        "url": "https://news.bbcimg.co.uk/nol/shared/img/bbc_news_120x60.gif",
+        "title": "BBC News - Home",
+        "link": "https://www.bbc.co.uk/news/"
+      },
+      "_settings": {}
+    }
+  preview-mode: live
+  preview-container: event
+  search-term: 
+  service-url: 
+  xclass: 
+  xstyle: 
+  code: |-
+    action.initialize = function(evt) {
+      //debugger;
+    }

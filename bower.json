@@ -1,0 +1,8 @@
+{
+  "name": "bbc-news",
+  "version": "0.0.1.16",
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#master"
+  }
+}
